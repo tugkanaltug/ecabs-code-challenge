@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_navigation.xml"
+    app:startDestination="@id/eventsFragment">
+    <fragment
+        android:id="@+id/eventsFragment"
+        android:name="ecabs.code.challenge.ui.events.EventsFragment"
+        android:label="@string/app_name">
+        <action
+            android:id="@+id/showDetails"
+            app:destination="@id/detailsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailsFragment"
+        android:name="ecabs.code.challenge.ui.details.DetailsFragment">
+        <argument
+            android:name="item"
+            app:argType="ecabs.code.challenge.data.item.Events" />
+        <action
+            android:id="@+id/showEvents"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left"
+            app:popUpTo="@+id/eventsFragment" />
+    </fragment>
+</navigation>
